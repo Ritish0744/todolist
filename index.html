@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="src/output.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container flex bg-slate-400 ">
+      <div class="logo">
+        <span class="logo mx-4 px-3 py-3 ">itask</span>
+      </div>
+
+      <ul class="flex gap-10 mx-4 px-3 py-3">
+        <li class="lis">home</li>
+        <li class="lis">tasks</li>
+      </ul>
+    </div>
+    <div class="input  bg-slate-400 flex mx-auto">
+      <form action="">Add a todo:</form>
+      <input type="text" id="input" onkeydown="if(event.key === 'Enter') add()"/>
+      <button onclick="add()" onkeydown="add()" class="btn">add</button>
+    </div>
+
+
+    <div class="main mx-auto " >
+        <div class="list">
+          
+          <ul id='list' ></ul>
+        </div>
+        
+       
+       
+      </div>
+     <script src="scipt.js"></script>
+</body>
+
+</html>

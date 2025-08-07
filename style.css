@@ -4,20 +4,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60vw !important;
+    width: 90vw !important;
   }
   .container {
     display: flex;
     flex-direction: column;
-    width: 60vw !important;
+    width: 90vw !important;
     justify-content: center;
     align-items: center;
   }
   input {
-    width: 50vw !important;
+    width: 70vw !important;
   }
   .main {
-    width: 60vw !important;
+    width: 90vw !important;
     min-height: 70vh;
   }
   .list {
@@ -147,3 +147,4 @@ li {
   white-space: normal;
   max-width: 42vw;
 }
+

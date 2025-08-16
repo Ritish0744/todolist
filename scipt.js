@@ -1,7 +1,7 @@
 
-
-function add(){
-  let input=document.getElementById(`input`).value;
+showtask()
+function add(taskText){
+ let input = taskText || document.getElementById("input").value;
   let list=document.getElementById(`list`)
   let todolists=document.createElement(`li`);
   let error=document.createElement(`li`);
@@ -15,7 +15,7 @@ function add(){
     list.appendChild(error)
    setTimeout(() => {
     error.style.opacity="0"
-    
+    addtask()
     
     
   }, 800);
@@ -31,6 +31,7 @@ function add(){
     
 
 let span1 = document.createElement("span");
+span1.classList.add("span1")
 span1.textContent=input;
 
 let btn1 = document.createElement("button");
@@ -54,9 +55,14 @@ todolists.appendChild(btn1);
 todolists.appendChild(span1);
 todolists.appendChild(div1);
 list.appendChild(todolists);
+addtask();
+
   
 
-   document.getElementById("input").value = ""; // clear input
+   if (!taskText) {
+  document.getElementById("input").value = "";
+}
+
 let check=true;
 btn1.onclick=function(){
   if (check){
@@ -71,12 +77,32 @@ btn1.style.backgroundColor="cyan"
   
   }
   check=!check
+  addtask();
 }
 
 del.onclick=function(){
   list.removeChild(todolists)
+  addtask();
 }
 
-
+addtask();
   }
+}
+
+function addtask(){
+  let tasks=[]
+  
+  list.querySelectorAll(".span1").forEach(function(evet){
+  tasks.push(evet.textContent.trim())
+})
+
+  
+  localStorage.setItem(`tasks`,JSON.stringify(tasks))
+}
+
+function showtask(){
+  const tasks=JSON.parse(localStorage.getItem(`tasks`))
+   tasks.forEach(function(task){
+    add(task);   
+  });
 }
